@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="./mvvm.js"></script>
+    <script src="./compile.js"></script>
+    <script src="./observer.js"></script>
+    <script src="./watcher.js"></script>
+
+    <div id="div">
+        <span>{{name}}</span>
+        <span>{{what.age}}</span>
+        <br>
+        <br>
+        <button v-on:click="handle">按钮</button>
+    </div>
+
+
+    <script>
+        var vn = new MVVM({
+            el: '#div',
+            data: {
+                name: '名字',
+                what: {
+                    age: 18
+                }
+            },
+            methods: {
+                handle() {
+                    this.name = 'aaa';
+                    this.what.age = 118
+                }
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>
